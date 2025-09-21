@@ -1,0 +1,14 @@
+---@class LinearGradient
+---You can't change `colors` of LinearGradient after it's created.
+---@field start {x: number, y: number}
+---@field stop {x: number, y: number}
+---@field _normalizedStart Vector2 -- Normalized start for Weo. You don't need to use it,Weo handles it for you.
+---@field _normalizedStop Vector2 -- Normalized stop for Weo. You don't need to use it,Weo handles it for you.
+
+---@class RadialGradient
+---You can't change `colors` of RadialGradient after it's created.
+---@field center {x: number, y: number}
+---@field radius {x: number, y: number}
+---@field opacity number
+---@field _normalizedCenter Vector2 -- Normalized center for Weo. You don't need to use it,Weo handles it for you.
+---@field _normalizedRadius Vector2 -- Normalized radius for Weo. You don't need to use it,Weo handles it for you.

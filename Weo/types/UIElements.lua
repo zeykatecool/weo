@@ -1,0 +1,64 @@
+---@meta
+
+---@class Frame
+---@field RenderSurface RenderSurface READONLY: The RenderSurface to which the Frame is attached. Please do not set this manually,Weo handles it for you.
+---@field absolute {position : Vector2,size : Vector2} READONLY: Absolute position and size of the Frame. Changing this will not change the position or size of the Frame.
+---@field position UDim2 Position of the Frame.
+---@field size UDim2 Size of the Frame.
+---@field class table Class of the Frame. WCSS
+---@field bgcolor number|LinearGradient|RadialGradient Color of the Frame.
+---@field visible boolean Whether the Frame is visible or not.
+---@field borderRadius number Radius of the Frame's corners.
+---@field zIndex number Z-index of the Frame.
+---@field MouseHover ReturnXYB Fires when the mouse hovers over the Frame.
+---@field MouseButton1Click ReturnXY Fires when the Frame is clicked.
+---@field MouseButton2Click ReturnXY Fires when the Frame is right clicked.
+---@field MouseButtonDown ReturnXYB Fires when the mouse button is down.
+---@field MouseButtonUp ReturnXYB Fires when the mouse button is up.
+---@field MouseWheel ReturnScroll Fires when the mouse wheel is scrolled.
+---@field MouseLeave ReturnXYB Fires when the mouse leaves the Frame.
+---@field Shown EmptySignal Fires when the Frame is shown.
+---@field Hidden EmptySignal Fires when the Frame is hidden.
+---@field Destroyed EmptySignal Fires when the Frame is destroyed.
+---@field parent any Parent of the Frame.
+---@field Destroy fun(self: Frame) Destroy the Frame.
+---@field hide fun(self: Frame) Hide the Frame.
+---@field show fun(self: Frame) Show the Frame.
+
+---@class Label
+---@field RenderSurface RenderSurface READONLY: The RenderSurface to which the Label is attached. Please do not set this manually,Weo handles it for you.   
+---@field absolute {position : Vector2,size : Vector2} READONLY: Absolute position and size of the Label. Changing this will not change the position or size of the Label.
+---@field position UDim2 Position of the Label.
+---@field size Vector2 READONLY: Size of the Label, changing this will not change the size of the Label. Check `RenderSurface:measure(text)`.
+---@field text string Text of the Label.
+---@field font string Font of the Label.
+---@field opacity number Opacity of the Label.
+---@field visible boolean Whether the Label is visible or not.
+---@field class table Class of the Label. WCSS
+---@field fontsize number Font size of the Label.
+---@field fontstyle Enum.FontStyle Font style of the Label.
+---@field fontweight number Font weight of the Label.
+---@field textcolor number|LinearGradient|RadialGradient Text color of the Label.
+---@field zIndex number Z-index of the Label.
+---@field parent any Parent of the Label.
+---@field MouseHover ReturnXYB Fires when the mouse hovers over the Label.
+---@field MouseButton1Click ReturnXY Fires when the Label is clicked.
+---@field MouseButton2Click ReturnXY Fires when the Label is right clicked.
+---@field MouseButtonDown ReturnXYB Fires when the mouse button is down.
+---@field MouseButtonUp ReturnXYB Fires when the mouse button is up.
+---@field MouseWheel ReturnScroll Fires when the mouse wheel is scrolled.   
+---@field MouseLeave ReturnXYB Fires when the mouse leaves the Label.
+---@field Destroyed EmptySignal Fires when the Label is destroyed.
+---@field Shown EmptySignal Fires when the Label is shown.
+---@field Hidden EmptySignal Fires when the Label is hidden.
+---@field Destroy fun(self: Label) Destroy the Label.
+---@field hide fun(self: Label) Hide the Label.
+---@field show fun(self: Label) Show the Label.
+
+---@class Notify
+---@field title string Title of the notification.
+---@field message string Message of the notification.
+---@field iconstyle Enum.IconStyle Icon style of the notification.
+---@field send fun(self: Notify) Send the notification.
+---@field Clicked Signal Fires when the notification is clicked.
+

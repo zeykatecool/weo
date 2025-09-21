@@ -1,0 +1,3 @@
+---@class UDim2
+---@field X { Scale: number, Offset: number }
+---@field Y { Scale: number, Offset: number }

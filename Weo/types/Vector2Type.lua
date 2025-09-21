@@ -1,0 +1,3 @@
+---@class Vector2
+---@field x number
+---@field y number

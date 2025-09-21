@@ -1,0 +1,57 @@
+---@meta
+
+---@class ReturnXY : Signal
+---@field Connect fun(self, callback: fun(Position: Vector2)): table connection
+---@field Fire fun(self, Position: Vector2): nil
+
+---@class ReturnXYB : Signal
+---@field Connect fun(self, callback: fun(Position:Vector2,buttons:{left:boolean,middle:boolean,right:boolean,control:boolean,shift:boolean})): table connection
+---@field Fire fun(self, Position:Vector2, buttons:{left:boolean,middle:boolean,right:boolean,control:boolean,shift:boolean}): nil
+
+---@class ReturnScroll : Signal
+---@field Connect fun(self, callback: fun(delta : number, buttons : {left : boolean, middle : boolean, right : boolean, control : boolean, shift : boolean})): table connection
+---@field Fire fun(self, delta : number, buttons : {left : boolean, middle : boolean, right : boolean, control : boolean, shift : boolean}): nil
+
+---@class RenderSurface
+---https://luart.org/doc/canvas/index.html
+---`MouseButtonUp` does not work on LuaRT 2.0.1 x64,you can still use MouseButtonDown `buttons` argument, `(buttons.left,buttons.right)` for the same effect.
+---@field IsRenderSurface true WEO: Please do not set this manually,Weo uses this for parent checking.
+---@field RenderElements table WEO: Please do not set this manually,Weo handles it for you.
+---@field parent Window READONLY: Get the RenderSurface's parent widget,mostly it's a Window.
+---@field cursor Enum.CursorStyle? Get/set the RenderSurface's mouse cursor.
+---@field x number Get/set the RenderSurface's horizontal position.
+---@field y number Get/set the RenderSurface's vertical position. 
+---@field width number Get/set the RenderSurface's width. 
+---@field height number Get/set the RenderSurface's height. 
+---@field align "all" Align the RenderSurface relative to its parent. Weo works best with "all" alignment.
+---@field enabled boolean Enable/disable the RenderSurface widget. 
+---@field visible boolean Controls whether the RenderSurface appears on screen. 
+---@field color string Get/set the RenderSurface actual color for drawing. 
+---@field bgcolor number|LinearGradient|RadialGradient Get/set the RenderSurface actual background color. 
+---@field font string Get/set the RenderSurface current font. Gets from Windows system fonts.
+---@field fontsize number Get/set the RenderSurface current font size. 
+---@field fontweight number Get/set the RenderSurface current font weight. Expecting a number between 1 and 999.
+---@field fontstretch number Get/set the RenderSurface current font stretch. Expecting a number between 1 and 9.
+---@field fontstyle Enum.FontStyle Get/set the RenderSurface current font style. 
+---@field window Window The Window to which the RenderSurface is attached. Please do not set this manually,Weo handles it for you.
+---@field rotate fun(self : RenderSurface,angle : number,x : number?,y : number?) Rotate the RenderSurface.
+---@field scale fun(self : RenderSurface,x : number,y : number,centerx : number?,centery : number?) Scale the RenderSurface.
+---@field translate fun(self : RenderSurface,x : number,y : number) Translate the RenderSurface.
+---@field identity fun(self : RenderSurface) Reset the RenderSurface's transform to default identity matrix.
+---@field show fun(self: RenderSurface) Show the RenderSurface.
+---@field hide fun(self: RenderSurface) Hide the RenderSurface.
+---@field measure fun(self: RenderSurface,text:string) : {width : number,height : number} Measure the text size.
+---@field Refresh fun(self: RenderSurface,force : boolean) Refresh the RenderSurface, this will cause the RenderSurface to redraw. If the RenderSurface loaded but elements not created, it will force RenderSurface to render the elements.
+---@field Shown EmptySignal Fires when the RenderSurface is shown.
+---@field Hidden EmptySignal Fires when the RenderSurface is hidden.
+---@field MouseButton1Click ReturnXY Fires when the RenderSurface is clicked.
+---@field MouseButton2Click ReturnXY Fires when the RenderSurface is right clicked.
+---@field MouseHover ReturnXY Fires when the mouse hovers over the RenderSurface.
+---@field Created EmptySignal Fires when the RenderSurface is created.
+---@field MouseButtonDown ReturnXYB Fires when the mouse button is down.
+---@field MouseButtonUp ReturnXYB Fires when the mouse button is up. DISCLAIMER: Does not work on LuaRT 2.0.1 x64,you can still use MouseButtonDown `buttons` argument, `(buttons.left,buttons.right)` for the same effect.
+---@field MouseWheel ReturnScroll Fires when the mouse wheel is scrolled.
+---@field MouseLeave EmptySignal Fires when the mouse leaves the RenderSurface.
+---@field LinearGradient any Please use `Color.LinearGradient` instead.
+---@field RadialGradient any Please use `Color.RadialGradient` instead.
+---@field print fun(self: RenderSurface,text:string,x : number,y : number,color : number|LinearGradient|RadialGradient) Please use `Label` instead.
