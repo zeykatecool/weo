@@ -1,5 +1,5 @@
 # Getting Started with Weo
-Weo is a extension for  <span style={{ color: '#efb42c' }}>Lua</span><span style={{ color: '#004080' }}>RT</span>, designed to unlock its full potential.
+Weo is a extension for LuaRT, designed to unlock its full potential.
 
 ## Project Status
 
