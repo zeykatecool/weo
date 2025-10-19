@@ -1,6 +1,8 @@
 # Getting Started with Weo
 Weo is a extension for LuaRT, designed to unlock its full potential.
 
+Please visit *https://zeykatecool.github.io/weo/* for documentation.
+
 ## Project Status
 
 This project is still very young.  
